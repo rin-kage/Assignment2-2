@@ -19,7 +19,7 @@ function num_click(val){
   if(result.value == "0" && val == "0"){
     result.value = "0";
 }else if(result.value == "0" && val =="."){
-  result.value ="0";
+  result.value ="0.";
 }else if (result.value == "0"){
   result.value = val;
 }else{
@@ -43,10 +43,11 @@ function ope_click(val){
 function equal_click(){
   if(is_ope_last()) result.value = result.value.slice(0,-1);
   
-  var temp = new Function("return" + result.value.replaceAll("×","*").replaceAll("÷","/"))();
+  var temp = new Function("return " + result.value.replaceAll("×","*").replaceAll("÷","/"))();
   
   if(temp ==  Infinity || Number.isNaN(temp)){
     result.value = "Error";
+    is_calc = true;
   }else{
     result.value = temp;
     is_calc = true;
