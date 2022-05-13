@@ -56,5 +56,5 @@ function equal_click(){
 
 //演算子の確認
 function is_ope_last(){
-  return["+","-","×","÷"].includes(result.value.toString().slice(-1));
+  return ["+","-","×","÷"].includes(result.value.toString().slice(-1));
 }
